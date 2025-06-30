@@ -1,0 +1,132 @@
+ 1. Problem Statement:
+Define an abstract class Shape with an abstract method area() and a concrete method draw().
+abstract class Shape {
+    abstract double area();
+    void draw() {
+        System.out.println("Drawing shape");
+    }
+}
+
+--------------------------------------------------------------------
+2. Problem Statement:
+Create an interface Vehicle with method start() and implement it in Car and Bike.
+interface Vehicle {
+    void start();
+}
+
+class Car implements Vehicle {
+    public void start() { System.out.println("Car started"); }
+}
+
+class Bike implements Vehicle {
+    public void start() { System.out.println("Bike started"); }
+}
+
+--------------------------------------------------------------------
+3. Problem Statement:
+Create an abstract class Employee with method calculateSalary() and a subclass Developer.
+abstract class Employee {
+    abstract double calculateSalary();
+}
+
+class Developer extends Employee {
+    double calculateSalary() {
+        return 50000.0;
+    }
+}
+--------------------------------------------------------------------
+
+4. Problem Statement:
+Define a default method in an interface Drawable.
+interface Drawable {
+    default void draw() {
+        System.out.println("Default drawing");
+    }
+}
+
+--------------------------------------------------------------------
+5. Problem Statement:
+Demonstrate interface inheritance. Interface B extends interface A.
+interface A {}
+interface B extends A {}
+
+--------------------------------------------------------------------
+6. Problem Statement:
+Demonstrate interface-based polymorphism using Animal interface.
+interface Animal {
+    void sound();
+}
+
+class Dog implements Animal {
+    public void sound() { System.out.println("Bark"); }
+}
+
+class Cat implements Animal {
+    public void sound() { System.out.println("Meow"); }
+}
+
+--------------------------------------------------------------------
+7. Problem Statement:
+Resolve method conflict when two interfaces have the same default method.
+interface A { default void run() {} }
+interface B { default void run() {} }
+
+class C implements A, B {
+    public void run() {
+        A.super.run(); // or B.super.run()
+    }
+}
+
+--------------------------------------------------------------------
+8. Problem Statement:
+Use an interface as a reference type.
+Flyable f = new Bird();
+
+--------------------------------------------------------------------
+9. Problem Statement:
+Demonstrate an abstract class implementing an interface partially.
+abstract class AbstractProcessor implements Runnable {
+    // some implementation, some abstract methods left
+}
+
+--------------------------------------------------------------------
+10. Problem Statement:
+Demonstrate covariant return types with abstract class.
+class A {
+    A get() {
+        return this;
+    }
+}
+
+class B extends A {
+    @Override
+    B get() {
+        return this;
+    }
+}
+
+
+--------------------------------------------------------------------
+11. Problem Statement:
+Give a real-world abstraction example from a billing system.
+abstract class PaymentMethod {
+    double amount;
+    String currency;
+
+    void validate() {
+        System.out.println("Validating payment");
+    }
+
+    abstract void charge();
+    abstract void refund();
+}
+
+class CreditCardPayment extends PaymentMethod {
+    void charge() {
+        System.out.println("Charging credit card");
+    }
+
+    void refund() {
+        System.out.println("Refunding credit card");
+    }
+}
