@@ -1,0 +1,189 @@
+Example 1: Calculator - Add Function
+class Calculator {
+    int add(int a, int b) {
+        return a + b;
+    }
+
+    float add(float a, float b) {
+        return a + b;
+    }
+}
+
+-------------------------------------------------------
+Example 2: Logger Utility
+
+class Logger {
+    void log(String message) {
+        System.out.println("Log: " + message);
+    }
+
+    void log(String tag, String message) {
+        System.out.println(tag + ": " + message);
+    }
+}
+
+-------------------------------------------------------
+
+Example 3: Payment Gateway
+class PaymentProcessor {
+    void pay(String cardNumber, double amount) {
+        // process via card number
+    }
+
+    void pay(Card card, double amount) {
+        // process via card object
+    }
+}
+
+-------------------------------------------------------
+
+Example 4: Search Functionality
+class SearchService {
+    void search(int id) {
+        // search by ID
+    }
+
+    void search(String name) {
+        // search by name
+    }
+
+    void search(int id, String name) {
+        // search by both
+    }
+}
+
+-------------------------------------------------------
+
+Example 5: Constructor Overloading
+
+class User {
+    String name;
+    String email;
+    int age;
+
+    User(String name) {
+        this.name = name;
+    }
+
+    User(String name, String email) {
+        this.name = name;
+        this.email = email;
+    }
+
+    User(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+}
+
+-------------------------------------------------------
+
+🔁 METHOD OVERRIDING – Code Examples
+
+Example 1: Animal Sound
+class Animal {
+    void sound() {
+        System.out.println("Some sound");
+    }
+}
+
+class Dog extends Animal {
+    @Override
+    void sound() {
+        System.out.println("Bark");
+    }
+}
+
+-------------------------------------------------------
+
+Example 2: Shape Area Calculation
+class Shape {
+    double area() {
+        return 0;
+    }
+}
+
+class Circle extends Shape {
+    double radius;
+
+    Circle(double radius) {
+        this.radius = radius;
+    }
+
+    @Override
+    double area() {
+        return Math.PI * radius * radius;
+    }
+}
+
+-------------------------------------------------------
+Example 3: Payment Gateway
+class Payment {
+    void pay(double amount) {
+        System.out.println("Generic payment of " + amount);
+    }
+}
+
+class CreditCardPayment extends Payment {
+    @Override
+    void pay(double amount) {
+        System.out.println("Paid " + amount + " using Credit Card");
+    }
+}
+
+-------------------------------------------------------
+
+Example 4: Employee Salary Calculation
+class Employee {
+    double calculateSalary() {
+        return 1000;
+    }
+}
+
+class PartTimeEmployee extends Employee {
+    @Override
+    double calculateSalary() {
+        return 500;
+    }
+}
+
+-------------------------------------------------------
+Example 5: Web Controller Response
+class BaseController {
+    String getResponse() {
+        return "Base response";
+    }
+}
+
+class UserController extends BaseController {
+    @Override
+    String getResponse() {
+        return "User response";
+    }
+}
+
+-------------------------------------------------------
+Covariant Return Type Example
+
+class A {
+    A get() {
+        return this;
+    }
+}
+
+class B extends A {
+    @Override
+    B get() {
+        return this;
+    }
+}
+
+-------------------------------------------------------
+Framework-Based Overriding Example (Spring Controller)
+@RestController
+public class MyController {
+    @GetMapping("/")
+    public String getMessage() {
+        return "Hello";
+    }
+}
